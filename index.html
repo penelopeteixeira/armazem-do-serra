@@ -11,11 +11,45 @@
 </head>
 
 <body>
+  <div class="age-gate" id="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-gate-title" aria-describedby="age-gate-description">
+    <div class="age-gate-card">
+      <div class="age-gate-logo" aria-hidden="true">
+        <img src="logo.png" alt="">
+      </div>
+
+      <div class="age-gate-content" id="age-gate-content">
+        <h2 id="age-gate-title">Você tem mais de 18 anos?</h2>
+        <p id="age-gate-description">Confirme sua idade para acessar o conteúdo do site.</p>
+
+        <div class="age-gate-actions">
+          <button class="age-gate-button age-gate-button-primary" type="button" id="age-gate-confirm">
+            SIM
+          </button>
+          <button class="age-gate-button age-gate-button-secondary" type="button" id="age-gate-deny">
+            NÃO
+          </button>
+        </div>
+
+        <div class="age-gate-note">
+          <p>Se beber, não dirija.</p>
+          <p>Conteúdo destinado a maiores de 18 anos.</p>
+        </div>
+      </div>
+
+      <div class="age-gate-denied" id="age-gate-denied" hidden>
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXk0b2RpZWVuYmIwdXVxc21lNHFlZ2d5cnYzcjAydXEwNjFlM2p1NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26gsfTBDmtaX6Rh9S/giphy.gif" alt="Animação ilustrativa de acesso bloqueado para menores de 18 anos">
+        <h2>Conteúdo indisponível</h2>
+        <p>Este conteúdo não está disponível para menores de 18 anos.</p>
+        <p class="age-gate-warning">Se beber, não dirija.</p>
+      </div>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="container header-container">
       <a class="brand" href="#inicio" aria-label="Ir para o início da página">
         <span class="brand-mark-logo" aria-hidden="true">
-        <img src="logo.png" alt="">
+          <img src="logo.png" alt="">
         </span>
         <span class="brand-text">
           <span class="brand-name">Armazém do Serra</span>
@@ -45,6 +79,16 @@
     </div>
   </header>
 
+  <nav class="mobile-bottom-navigation" aria-label="Navegação rápida mobile">
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#presentes">Presentes</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#loja">Loja</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
   <main>
     <section class="hero-section" id="inicio" aria-labelledby="hero-title">
       <div class="container hero-container">
@@ -54,9 +98,12 @@
             Vinhos, espumantes, cervejas especiais, produtos gourmet e kits de presente com curadoria para jantares, encontros, celebrações e momentos que merecem bom gosto.
           </p>
 
-          <div class="hero-actions">
+          <div class="hero-actions action-row action-row-three">
             <a class="button button-primary" href="https://wa.me/5532999156840?text=Ol%C3%A1%21%20Gostaria%20de%20ajuda%20para%20escolher%20uma%20bebida%20ou%20presente." target="_blank" rel="noopener noreferrer">
               Falar no WhatsApp
+            </a>
+            <a class="button button-secondary" href="#sobre">
+              Sobre a loja
             </a>
             <a class="button button-secondary" href="#produtos">
               Conhecer produtos
@@ -79,11 +126,8 @@
         <div class="about-intro">
           <div class="about-heading">
             <span class="section-eyebrow">Sobre a loja</span>
-
             <h2>Uma curadoria elegante e sem complicação</h2>
-
             <div class="about-divider"></div>
-
           </div>
 
           <div class="about-content">
@@ -102,21 +146,18 @@
 
             <div class="about-cards">
               <article class="about-card">
-
                 <h3>Curadoria</h3>
                 <div class="card-divider"></div>
                 <p>Rótulos e produtos escolhidos com critério.</p>
               </article>
 
               <article class="about-card">
-
                 <h3>Bom gosto</h3>
                 <div class="card-divider"></div>
                 <p>Opções para presentear, receber bem ou brindar.</p>
               </article>
 
               <article class="about-card">
-
                 <h3>Atendimento humano</h3>
                 <div class="card-divider"></div>
                 <p>Ajuda simples para escolher com confiança.</p>
@@ -128,9 +169,7 @@
         <div class="about-brands">
           <div class="brands-heading">
             <h2>Marcas selecionadas para quem valoriza boas escolhas</h2>
-
             <div class="about-divider about-divider-light"></div>
-
             <p>
               Trabalhamos com marcas reconhecidas e produtos escolhidos para
               diferentes ocasiões.
@@ -140,23 +179,32 @@
           <div class="brands-grid">
             <article class="brand-card">
               <img class="brand-logo" src="valduga.png" alt="Logo Casa Valduga">
-              <!-- <span>Casa Valduga</span> -->
             </article>
 
             <article class="brand-card">
               <img class="brand-logo" src="madeira.png" alt="Logo Casa Madeira">
-              <!-- <span>Casa Madeira</span> -->
             </article>
 
             <article class="brand-card">
               <img class="brand-logo" src="Domno.png" alt="Logo Domno">
-              <!-- <span>Domno</span> -->
             </article>
 
             <article class="brand-card">
               <img class="brand-logo" src="Leopoldina.png" alt="Logo Cervejaria Leopoldina">
-              <!-- <span>Cervejaria Leopoldina</span> -->
             </article>
+
+            <article class="brand-card">
+              <img class="brand-logo" src="pontonero.png" alt="Logo Ponto Nero">
+            </article>
+          </div>
+
+          <div class="section-actions action-row">
+            <a class="button button-primary" href="https://wa.me/5532999156840?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20melhor%20a%20curadoria%20do%20Armaz%C3%A9m%20do%20Serra." target="_blank" rel="noopener noreferrer">
+              Falar no WhatsApp
+            </a>
+            <a class="button button-secondary" href="#produtos">
+              Conhecer produtos
+            </a>
           </div>
         </div>
       </div>
@@ -221,6 +269,15 @@
             </div>
           </article>
         </div>
+
+        <div class="section-actions action-row">
+          <a class="button button-primary" href="https://wa.me/5532999156840?text=Ol%C3%A1%21%20Gostaria%20de%20comprar%20pelo%20WhatsApp%20e%20receber%20uma%20indica%C3%A7%C3%A3o%20de%20produto." target="_blank" rel="noopener noreferrer">
+            Comprar pelo WhatsApp
+          </a>
+          <a class="button button-secondary" href="#presentes">
+            Conhecer os kits de presente
+          </a>
+        </div>
       </div>
     </section>
 
@@ -245,9 +302,14 @@
             <p>Um vinho especial, um produto gourmet e uma apresentação cuidadosa transformam o simples em uma lembrança marcante.</p>
           </div>
 
-          <a class="button button-primary" href="https://wa.me/5532999156840?text=Ol%C3%A1%21%20Gostaria%20de%20uma%20sugest%C3%A3o%20de%20presente." target="_blank" rel="noopener noreferrer">
-            Pedir sugestão de presente
-          </a>
+          <div class="section-actions section-actions-left action-row">
+            <a class="button button-primary" href="https://wa.me/5532999156840?text=Ol%C3%A1%21%20Gostaria%20de%20uma%20sugest%C3%A3o%20de%20presente." target="_blank" rel="noopener noreferrer">
+              Pedir sugestão de presente
+            </a>
+            <a class="button button-secondary" href="#como-funciona">
+              Entender como funciona
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -279,9 +341,12 @@
           </article>
         </div>
 
-        <div class="section-action">
+        <div class="section-actions action-row">
           <a class="button button-light" href="https://wa.me/5532999156840?text=Ol%C3%A1%21%20Quero%20ajuda%20para%20escolher%20uma%20op%C3%A7%C3%A3o%20ideal." target="_blank" rel="noopener noreferrer">
             Começar pelo WhatsApp
+          </a>
+          <a class="button button-secondary button-secondary-light" href="#loja">
+            Onde fica a loja?
           </a>
         </div>
       </div>
@@ -319,17 +384,19 @@
             </li>
           </ul>
 
-          <a class="button button-primary" href="https://wa.me/5532999156840?text=Ol%C3%A1%21%20Gostaria%20de%20falar%20com%20a%20loja." target="_blank" rel="noopener noreferrer">
-            Chamar a loja
-          </a>
+          <div class="section-actions section-actions-left action-row">
+            <a class="button button-primary" href="https://wa.me/5532999156840?text=Ol%C3%A1%21%20Gostaria%20de%20falar%20com%20a%20loja%20sobre%20produtos%2C%20pedidos%20ou%20retirada." target="_blank" rel="noopener noreferrer">
+              Chamar a loja
+            </a>
+            <a class="button button-secondary" href="#faq">
+              Dúvidas frequentes
+            </a>
+          </div>
         </div>
 
         <div class="map-card" aria-label="Mapa da loja Armazém do Serra em Juiz de Fora">
           <iframe
             src="https://www.google.com/maps?q=Loja%20de%20vinho%20e%20bebidas%20-%20Armaz%C3%A9m%20do%20Serra%20Loja%2C%20Rua%20S%C3%A3o%20Mateus%2C%20872%2C%20Juiz%20de%20Fora%20MG&output=embed"
-            width="100%"
-            height="100%"
-            style="border:0;"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -372,6 +439,12 @@
             <p>Não. A proposta é justamente facilitar a escolha com atendimento leve, próximo e consultivo.</p>
           </details>
         </div>
+
+        <div class="section-actions">
+          <a class="button button-primary" href="https://wa.me/5532999156840?text=Ol%C3%A1%21%20Quero%20fazer%20meu%20pedido%20no%20Armaz%C3%A9m%20do%20Serra." target="_blank" rel="noopener noreferrer">
+            Quero fazer meu pedido
+          </a>
+        </div>
       </div>
     </section>
 
@@ -382,7 +455,7 @@
             <p class="section-kicker">Fale com a loja</p>
             <h2 id="final-cta-title">Produtos ideais para seus melhores momentos</h2>
             <p>
-              Conte o momento, seu gosto e o orçamento. 
+              Conte o momento, seu gosto e o orçamento.
               <br>
               Ajudamos você a escolher uma opção especial, prática e com bom gosto.
             </p>
@@ -405,8 +478,8 @@
       <div class="footer-brand">
         <a class="brand footer-logo" href="#inicio" aria-label="Voltar ao início da página">
           <span class="brand-mark-logo" aria-hidden="true">
-          <img src="logo.png" alt="">
-</span>
+            <img src="logo.png" alt="">
+          </span>
           <span class="brand-text">
             <span class="brand-name">Armazém do Serra Loja</span>
             <span class="brand-subtitle">Curadoria para bons momentos</span>
